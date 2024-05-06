@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>ALEX CAR</title>
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:include="usuario/template_usuario::header"></div>
+	<!-- Page Content -->
+	<div class="container">
+
+		<!-- Jumbotron Header -->
+		<!-- 		<header class="jumbotron my-4"> -->
+
+		<!-- 			<!-- 		se podria agregar aca la imagen -->
+		<!-- 			<h5 class="display-3">ALEX CAR AUTOMOTORES</h5> -->
+
+		<!-- 			<h6>* CONTAMOS CON AMPLIOS PLANES DE FINANCIACION PROPIA Y VIA -->
+		<!-- 				BANCO, ACEPTAMOS TU USADO AL MEJOR PRECIO</h6> -->
+
+		<!-- 			<h6 >* TENEMOS EL PLAN A TU MEDIDA</h6> -->
+		<!-- 			<h6>* ENTREGA DEL 50% DEL VALOR Y SALDO A CONVENIR LLAMANOS AL -->
+		<!-- 				0983-660470 O AL WHATSAPP</h6> -->
+
+		<!-- 			<hgroup> -->
+		<!-- 				<h5>REQUISITOS PARA CREDITO</h5> -->
+		<!-- 				<h6>* 3 REFERENCIAS PERSONALES * COPIA DE ANDE * COPIA DE -->
+		<!-- 					CEDULA Y LISTO</h6> -->
+		<!-- 			<h6>TENEMOS TALLER PROPIO DE CAMBIO DE VOLANTES CON GARANTIA DE -->
+		<!-- 				CREMALLERA, PARTE ELECTRICA, TABLERO Y AIRE</h6> -->
+		<!-- 		</header> -->
+
+
+<!-- 		<header class="py-5 bg-dark"> -->
+<!-- 			<div class="container"> -->
+
+<!-- 				<img class="card-img-top" -->
+<!-- 						th:src="@{/C:\xampp\htdocs\tiendaspring\alexcar.jpeg}" alt=""> -->
+<!-- 			</div> -->
+<!-- 			<!-- /.container --> -->
+<!-- 		</header> -->
+
+		<!-- Jumbotron Header -->
+		<header class="jumbotron my-4">
+			<h1 class="display-3">Bienvenido a Tu Tienda</h1>
+			 <img class="card-img-top"
+			 						th:src="@{C:\xampp\htdocs\tiendaspring\alexcar.jpeg}" alt="">
+		</header>
+
+
+		<!-- Page Features -->
+		<div class="row text-center">
+
+			<div class="col-lg-3 col-md-6 mb-4" th:each="producto: ${productos}">
+				<div class="card h-100">
+
+					<img class="card-img-top"
+						th:src="@{/images/{img}(img=${producto.imagen})}" alt="">
+
+					<div class="card-body">
+						<p class="card-text" th:text="${producto.nombre}"></p>
+					</div>
+
+
+					<div class="card-footer">
+						<a th:href="@{/productohome/{id}  (id=${producto.id})  }"
+							class="btn btn-success">Ver producto</a>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+		</div>
+		<!-- /.row -->
+
+	</div>
+	<!-- /.container -->
+
+	<!-- Footer -->
+
+	<!-- Footer -->
+	<div th:include="usuario/template_usuario.html::footer"></div>
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+
+</html>

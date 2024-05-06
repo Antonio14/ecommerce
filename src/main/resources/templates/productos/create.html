@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>eCommerce</title>
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}"
+	rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/heroic-features.css}" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<!-- Navigation -->
+	<div th:include="administrador/template_admin.html::header"></div>
+	<!-- Page Content -->
+	<div class="container">
+
+
+		<!-- Page Heading/Breadcrumbs -->
+		<h1 class="mt-4 mb-3">
+			eCommerce <small>Productos</small>
+		</h1>
+
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+			<li class="breadcrumb-item active">Crear Productos</li>
+		</ol>
+
+		<h2>Crear Producto</h2>
+		<form class="form-horizontal" th:action="@{/productos/save}"
+			method="post" enctype="multipart/form-data">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="nombre">Nombre:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="nombre" name="nombre"
+						placeholder="Ingrese el nombre del producto" autocomplete="off"
+						required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="descripcion">Descripción:</label>
+				<div class="col-sm-10">
+					<textarea class="form-control" id="descripcion" name="descripcion"
+						placeholder="Ingrese la descripcion del producto" required
+						autocomplete="off"> </textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="cantidad">Cantidad:</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" id="cantidad"
+						name="cantidad" placeholder="Ingrese la cantidad del producto"
+						required autocomplete="off">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="precio">Precio:</label>
+				<div class="col-sm-10">
+					<input type="number" class="form-control" step="any" id="precio"
+						name="precio" placeholder="Ingrese el precio del producto"
+						autocomplete="off" required>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					PRINCIPAL:</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img" name="img">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  -->
+			<!-- IMAGEN DETALLES  1-->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 1 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img1" name="img1">
+				</div>
+			</div>
+			<!-- 			<!-- IMAGEN DETALLES  2 --> -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 2 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img2" name="img2">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  3 -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 3 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img3" name="img3">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  4 -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 4 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img4" name="img4">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  5 -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 5 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img5" name="img5">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  6 -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 6 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img6" name="img6">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  7 -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 7 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img7" name="img7">
+				</div>
+			</div>
+			<!-- IMAGEN DETALLES  8 -->
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="img">IMAGEN
+					DETALLES 8 :</label>
+				<div class="col-sm-10">
+					<input type="file" class="form-control-file" id="img8" name="img8">
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-2">
+					<button type="submit" class="btn btn-success">
+						<span class="glyphicon glyphicon-saved"></span> Guardar
+					</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+	<!-- /.container -->
+
+	<!-- Footer -->
+	<div th:include="administrador/template_admin.html::footer"></div>
+
+	<!-- Bootstrap core JavaScript -->
+	<script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+	<script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>
