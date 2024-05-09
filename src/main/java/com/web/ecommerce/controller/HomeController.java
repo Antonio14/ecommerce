@@ -80,6 +80,8 @@ public class HomeController {
 		List<DetalleProducto> detallesp = new ArrayList<>();
 		
 		Producto producto = new Producto();
+		
+//		Integer i = (int) (long) id;
 		Optional<Producto> productoOptional = productoService.get(id);
 		producto = productoOptional.get();
 //
