@@ -65,11 +65,14 @@ public class ProductoController {
 			@RequestParam("img3") MultipartFile file3, @RequestParam("img4") MultipartFile file4,
 			@RequestParam("img5") MultipartFile file5, @RequestParam("img6") MultipartFile file6,
 			@RequestParam("img7") MultipartFile file7, @RequestParam("img8") MultipartFile file8) throws IOException {
-		
+
 		LOGGER.info("Este es el objeto producto {}", producto);
 		Usuario usuario = new Usuario(1, "", "", "", "", "", "", "");
 		producto.setUsuario(usuario);
 
+		//
+		String directorio = System.getProperty("user.dir");
+		LOGGER.info("Este es el objeto directorio del proyecto {}", producto);
 		// imagen
 		if (producto.getId() == null) { // cuando se crea un producto
 			String nombreImagen = upload.saveImage(file);
@@ -80,7 +83,7 @@ public class ProductoController {
 
 		LOGGER.info("Este es el objeto producto detalle {}", producto);
 		productoService.save(producto);
-		
+
 		DetalleProducto detalleProducto = new DetalleProducto();
 		String nombreImagenDet1 = upload.saveImage(file);
 		String nombreImagenDet2 = upload.saveImage(file2);
@@ -90,50 +93,50 @@ public class ProductoController {
 		String nombreImagenDet6 = upload.saveImage(file6);
 		String nombreImagenDet7 = upload.saveImage(file7);
 		String nombreImagenDet8 = upload.saveImage(file8);
-		//1
+		// 1
 		detalleProducto.setImagen(nombreImagenDet1);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//2
+		// 2
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet2);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//3
+		// 3
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet3);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//4
+		// 4
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet4);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//5
+		// 5
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet5);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//6
+		// 6
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet6);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//7
+		// 7
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet7);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		//8
+		// 8
 		detalleProducto = new DetalleProducto();
 		detalleProducto.setImagen(nombreImagenDet8);
 		detalleProducto.setProducto(producto);
 		detalleProductoService.save(detalleProducto);
-		
-		
-		//List<DetalleProducto> detalleProductos = new ArrayList<>(); // se quiere agregar la lista de detalles de fotos
-		//detalleProductos.add(detalleProducto);
-		//producto.setDetalleProductos(detalleProductos);
+
+		// List<DetalleProducto> detalleProductos = new ArrayList<>(); // se quiere
+		// agregar la lista de detalles de fotos
+		// detalleProductos.add(detalleProducto);
+		// producto.setDetalleProductos(detalleProductos);
 
 		// guardar detalle del producto
 		// guardar detalles
@@ -142,7 +145,6 @@ public class ProductoController {
 //			detalleProductoService.save(dp);
 //		}
 
-		
 		return "redirect:/productos";
 	}
 
