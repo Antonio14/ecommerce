@@ -9,7 +9,7 @@ public class ResourceWebConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		
-		String directorio = System.getProperty("user.dir")+"\\images";
+		String directorio = System.getProperty("user.dir")+"//images";
 		//registry.addResourceHandler("/images/**").addResourceLocations("file:images/");
 		registry.addResourceHandler("directorio/**").addResourceLocations("file:images/");
 	}
