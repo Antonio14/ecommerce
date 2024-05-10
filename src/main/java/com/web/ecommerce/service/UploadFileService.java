@@ -20,12 +20,12 @@ public class UploadFileService {
 	//private String folder="images//";
 	//
 	//
-	String directorioTest = System.getProperty("user.dir")+"//app//";
-	String directorioTest1 = System.getProperty("user.dir")+"//app//";
+	String directorioTest = System.getProperty("user.dir");  // resultado directorioTest  step 1 /app//app//
+	String directorioTest1 = System.getProperty("user.dir");// /app/
 	
 	//
 	
-	private String folder="//app//";
+	private String folder=System.getProperty("user.dir");
 	//String directorio = System.getProperty("user.dir")+"//images";
 	//private String folder=directorio+"//";// en este directorio guarda las imagenes dentro del proyecto 
 	
@@ -39,13 +39,15 @@ public class UploadFileService {
 		
 		LOGGER.info("directorioTest1  step 1 {}", directorioTest1);
 		
+		LOGGER.info(" System.getProperty(\"user.dir\")  step 1 {}", System.getProperty("user.dir"));
+		
 		
 		if (!file.isEmpty()) {
 			byte [] bytes=file.getBytes();
 			Path path =Paths.get(folder+file.getOriginalFilename()); // en este punto guarda o escribe dentro del proyecto 
 			
 			//Path path =Paths.get(folder+file.getOriginalFilename()); // en este punto guarda o escribe dentro del proyecto 
-			LOGGER.info("folder  step 1 {}" , path.toString());
+			LOGGER.info("folder  step 1 {}" , folder);
 			Files.write(path, bytes);
 			LOGGER.info("folder step  {}" , path.toString());
 			LOGGER.info("UploadFileService ims step 1 {}" , path.toString());

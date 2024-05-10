@@ -14,7 +14,7 @@ public class ResourceWebConfiguration implements WebMvcConfigurer {
 		
 		//registry.addResourceHandler("/images/**").addResourceLocations("file:C://app//images//");
 		
-		registry.addResourceHandler("/app/**").addResourceLocations("file://app//");
+		registry.addResourceHandler("/app/**").addResourceLocations("file:"+System.getProperty("user.dir"));
 		
 		// nombre del recurso 								//donde se encuentra ese recurso
 		//registry.addResourceHandler("/images/**").addResourceLocations("file:src/main/resources/static/images/");
