@@ -19,6 +19,11 @@ public class UploadFileService {
 	private final Logger LOGGER = LoggerFactory.getLogger(UploadFileService.class);
 	//private String folder="images//";
 	//
+	//
+	String directorioTest = System.getProperty("user.dir")+"//app//";
+	String directorioTest1 = System.getProperty("user.dir")+"//app//";
+	
+	//
 	
 	private String folder="//app//";
 	//String directorio = System.getProperty("user.dir")+"//images";
@@ -28,7 +33,13 @@ public class UploadFileService {
 	
 	
 	public String saveImage(MultipartFile file) throws IOException {
-		LOGGER.info("UploadFileService  step 1 {}");
+		LOGGER.info("UploadFileService  folder step 1 {}");
+		
+		LOGGER.info("directorioTest  step 1 {}");
+		
+		LOGGER.info("directorioTest1  step 1 {}");
+		
+		
 		if (!file.isEmpty()) {
 			byte [] bytes=file.getBytes();
 			Path path =Paths.get(folder+file.getOriginalFilename()); // en este punto guarda o escribe dentro del proyecto 
