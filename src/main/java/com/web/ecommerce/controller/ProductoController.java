@@ -1,6 +1,7 @@
 package com.web.ecommerce.controller;
 
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -64,22 +65,29 @@ public class ProductoController {
 			@RequestParam("img1") MultipartFile file1, @RequestParam("img2") MultipartFile file2,
 			@RequestParam("img3") MultipartFile file3, @RequestParam("img4") MultipartFile file4,
 			@RequestParam("img5") MultipartFile file5, @RequestParam("img6") MultipartFile file6,
-			@RequestParam("img7") MultipartFile file7, @RequestParam("img8") MultipartFile file8) throws IOException {
+			@RequestParam("img7") MultipartFile file7, @RequestParam("img8") MultipartFile file8)
+			throws IOException, Exception {
 
 		LOGGER.info("Este es el objeto producto {}", producto);
 		Usuario usuario = new Usuario(1, "", "", "", "", "", "", "");
 		producto.setUsuario(usuario);
 
 		//
-		String directorio = System.getProperty("user.dir");
-		LOGGER.info("Este es el objeto directorio del proyecto {}", producto);
+		LOGGER.info("STEP 1 {}");
+		//String directorio = System.getProperty("user.dir");
+
+		LOGGER.info("Este es el objeto  step 1 {}");
+
 		// imagen
 		if (producto.getId() == null) { // cuando se crea un producto
+
+			LOGGER.info("Este es el objeto  step 2 {}");
 			String nombreImagen = upload.saveImage(file);
 			producto.setImagen(nombreImagen);
 		} else {
-
+			LOGGER.info("Este es el objeto  step 3 {}");
 		}
+		LOGGER.info("Este es el objeto  step 4 {}");
 
 		LOGGER.info("Este es el objeto producto detalle {}", producto);
 		productoService.save(producto);
