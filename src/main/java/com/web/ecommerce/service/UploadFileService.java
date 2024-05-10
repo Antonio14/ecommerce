@@ -44,12 +44,13 @@ public class UploadFileService {
 		
 		if (!file.isEmpty()) {
 			byte [] bytes=file.getBytes();
-			Path path =Paths.get(folder+file.getOriginalFilename()); // en este punto guarda o escribe dentro del proyecto 
+			Path path =Paths.get(folder+"/"+file.getOriginalFilename()); // en este punto guarda o escribe dentro del proyecto 
 			
 			//Path path =Paths.get(folder+file.getOriginalFilename()); // en este punto guarda o escribe dentro del proyecto 
 			LOGGER.info("folder  step 1 {}" , folder);
 			Files.write(path, bytes);
 			LOGGER.info("folder step  {}" , path.toString());
+			LOGGER.info("folder step t  {}" , folder+"/"+file.getOriginalFilename());
 			LOGGER.info("UploadFileService ims step 1 {}" , path.toString());
 			LOGGER.info("file.getOriginalFilename() ims step 1 {}" , file.getOriginalFilename());
 			return file.getOriginalFilename(); // retorna el nombre para guarda en base de datos 
